@@ -22,14 +22,14 @@ class UserSerializer(serializers.ModelSerializer):
 	def update(self,instance,validated_data):
 		"""Udate an user , setting th epassword correctly and return it """
 		password = validated_data.pop('password',None)
-		user = super().udpadte(instance,validated_data)
+		user = super().update(instance,validated_data)
 
 
 		if password:
 			user.set_password(password)
 			user.save()
 
-		return user 
+		return user
 
 
 class AuthTokenSerializer(serializers.Serializer):
