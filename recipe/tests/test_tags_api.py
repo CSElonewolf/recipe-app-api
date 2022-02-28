@@ -10,7 +10,7 @@ from rest_framework.test import APIClient
 from core.models import Tag
 from recipe.serializers import TagSerializer
 
-TAGS_URL = reverse('tag-list')\
+TAGS_URL = reverse('tag-list')
 
 class PublicTagsApiTests(TestCase):
 	"""Test the publicly available tags API"""
