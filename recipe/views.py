@@ -30,7 +30,7 @@ class IngredientViewSet(viewsets.GenericViewSet,mixins.ListModelMixin):
 	queryset = Ingredient.objects.all()
 	serializer_class = serializers.IngredientSerializer
 
-	def get_queryset(self):
+	def get_queryset(self): 
 		"""Return objects for the current authenicated user """
 		return self.queryset.filter(user = self.request.user).order_by('-name')
 
